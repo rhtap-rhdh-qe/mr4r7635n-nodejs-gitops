@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mr4r7635n-nodejs-gitops
+  description: This is GitOps manifest for mr4r7635n-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=mr4r7635n-nodejs
+    backstage.io/kubernetes-id: mr4r7635n-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: mr4r7635n-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mr4r7635n-nodejs
